@@ -2,11 +2,11 @@
   <div class="user-profile">
     <div class="user-profile_user-panel">
       <h1 class="user-profile_username"> @{{user.username}} </h1>
+      <div class="user-profile_AdminBadge" v-if="user.isAdmin">
+        admin
+      </div>
       <div class="user-profile_followerCount">
         <strong> Followers : </strong> {{followers}}
-      </div>
-      <div class="user-profile_AdminBadge">
-        admin
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@ export default {
       user: {
         id: 1,
         username: "ChuaWL",
-        isAdmin: false
+        isAdmin: true
       }
     };
   },
