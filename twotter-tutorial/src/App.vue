@@ -1,47 +1,44 @@
-//HTML
 <template>
-  <div id="app">
-    {{user.username}}
+  <div class="app">
+    <p>Username: {{ user.username }}</p>
 
-    <strong> Followers : </strong> {{followers}}
+    <p>
+      <strong>Followers:</strong>
+      {{ followers }}
+    </p>
 
-    <button @click="followUser">
-        Follow
+    <button type="button" @click="followUser">
+      Follow User
     </button>
-
   </div>
 </template>
 
-//Java
 <script>
-
 export default {
-  name: 'App',
+  name: "App",
+
   data() {
-      return{
-        followers : 0,
-        user : {
-            id: 1,
-            username : 'ChuaWL',
-        }
+    return {
+      followers: 0,
+
+      user: {
+        id: 1,
+        username: "ChuaWL"
       }
+    };
   },
 
-  method : {
-    followUser(){
-        this.followers++
+  methods: {
+    followUser() {
+      this.followers += 1;
     }
   }
-
-}
+};
 </script>
 
-//CSS
 <style>
-#app {
+.app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
